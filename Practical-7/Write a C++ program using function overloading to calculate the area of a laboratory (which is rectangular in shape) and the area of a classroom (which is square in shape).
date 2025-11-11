@@ -1,0 +1,19 @@
+#include <iostream>
+using namespace std;
+
+class Area {
+public:
+    void area(int a, int b) {
+        cout << "Area of laboratory: " << a * b << endl;
+    }
+    void area(int a) {
+        cout << "Area of classroom: " << a * a << endl;
+    }
+};
+
+int main() {
+    Area a1;
+    a1.area(12, 6);
+    a1.area(6);
+    return 0;
+}
