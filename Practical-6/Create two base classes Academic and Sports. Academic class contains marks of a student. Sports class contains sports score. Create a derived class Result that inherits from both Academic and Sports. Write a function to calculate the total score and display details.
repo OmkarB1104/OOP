@@ -1,0 +1,40 @@
+#include <iostream>
+using namespace std;
+
+class Academic {
+protected:
+    float m1, m2;
+public:
+    Academic() {
+        m1 = 26;
+        m2 = 25;
+    }
+};
+
+class Sports {
+protected:
+    int score;
+public:
+    Sports() {
+        score = 25;
+    }
+};
+
+class Result : public Academic, public Sports {
+public:
+    float r;
+    void total() {
+        r = m1 + m2 + score;
+    }
+    void display() {
+        cout << "Result: " << r << endl;
+        cout << "Sports Score: " << score << endl;
+    }
+};
+
+int main() {
+    Result r1;
+    r1.total();
+    r1.display();
+    return 0;
+}
