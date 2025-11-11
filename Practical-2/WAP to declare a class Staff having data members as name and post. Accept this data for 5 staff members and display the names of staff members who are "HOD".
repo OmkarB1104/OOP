@@ -1,0 +1,33 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+class Staff {
+private:
+    string name;
+public:
+    string post;
+    void accept() {
+        cout << "Enter employee name: ";
+        cin >> name;
+        cout << "Enter Employee post: ";
+        cin >> post;
+    }
+    void display() {
+        cout << "Employee with HOD post: " << name << endl;
+    }
+};
+
+int main() {
+    Staff c[5];
+    int i;
+    
+    for (i = 0; i < 5; i++)
+        c[i].accept();
+    
+    for (i = 0; i < 5; i++) {
+        if (c[i].post == "HOD")
+            c[i].display();
+    }
+    return 0;
+}
