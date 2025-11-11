@@ -1,0 +1,28 @@
+#include <iostream>
+#include <fstream>
+#include <string>
+using namespace std;
+
+int main() {
+    char ch;
+    ifstream fin("first.txt");
+    ofstream fout("destination.txt");
+    
+    if (!fin) {
+        cout << "ERROR in opening source file" << endl;
+        return 1;
+    }
+    if (!fout) {
+        cout << "ERROR in opening destination file" << endl;
+        fin.close();
+        return 1;
+    }
+    
+    while (fin.get(ch)) {
+        fout << ch;
+    }
+    fin.close();
+    fout.close();
+    cout << "File is successfully copied" << endl;
+    return 0;
+}
