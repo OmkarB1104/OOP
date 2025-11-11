@@ -1,0 +1,46 @@
+#include <iostream>
+using namespace std;
+
+class Book {
+private:
+    int id;
+    char name[20];
+public:
+    int price;
+
+    void accept() {
+        cout << "Name: ";
+        cin >> name;
+        cout << " Id: ";
+        cin >> id;
+        cout << "Price : ";
+        cin >> price;
+    }
+
+    void disp() {
+        cout << name;
+        cout << ", " << id;
+        cout << ", " << price << "\n";
+    }
+};
+
+int main() {
+    Book B1, B2;
+    B1.accept();
+    B2.accept();
+
+    if (B1.price > B2.price) {
+        cout << "Book having greater price is B1." << "\n";
+        B1.disp();
+    } else if (B1.price < B2.price) {
+        cout << "Book having greater price is B2." << "\n";
+        B2.disp();
+    } else {
+        cout << "Both books prices are same." << "\n";
+        B1.disp();
+        cout << "\n";
+        B2.disp();
+    }
+
+    return 0;
+}
