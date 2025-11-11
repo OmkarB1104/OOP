@@ -1,0 +1,28 @@
+#include <iostream>
+using namespace std;
+
+class Time {
+private:
+    int hr, min, sec;
+    int i;
+public:
+    void accept() {
+        cout << "Enter Hours: ";
+        cin >> hr;
+        cout << "Enter Minutes: ";
+        cin >> min;
+        cout << "Enter Seconds: ";
+        cin >> sec;
+        i = (hr * 3600) + (min * 60) + sec;
+    }
+    void display() {
+        cout << "Time converted in seconds is: " << i << endl;
+    }
+};
+
+int main() {
+    Time t1;
+    t1.accept();
+    t1.display();
+    return 0;
+}
