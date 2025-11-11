@@ -1,0 +1,32 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+class College {
+private:
+    int rollno;
+    string name;
+    string course;
+public:
+    College(int r, string n, string c = "Computer Engineering") {
+        rollno = r;
+        name = n;
+        course = c;
+    }
+    void display() {
+        cout << "Roll no: " << rollno << endl;
+        cout << "Name: " << name << endl;
+        cout << "Course: " << course << endl;
+    }
+    ~College() {
+        cout << "Destroyed." << endl;
+    }
+};
+
+int main() {
+    College c1(1, "Omkar");
+    College c2(2, "Jael");
+    c1.display();
+    c2.display();
+    return 0;
+}
