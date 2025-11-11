@@ -1,0 +1,42 @@
+#include <iostream>
+using namespace std;
+
+class Student {
+private:
+    int roll;
+    char name[20];
+public:
+    void accept() {
+        cout << "Enter Roll no: ";
+        cin >> roll;
+        cout << "Enter Name: ";
+        cin >> name;
+    }
+    void display() {
+        cout << "Roll no: " << roll << endl;
+        cout << "Name: " << name << endl;
+    }
+    class Marks {
+    private:
+        int m1, m2;
+    public:
+        void getmarks(int a, int b) {
+            m1 = 10;
+            m2 = 16;
+        }
+        void avg() {
+            int q = (m1 + m2) / 2;
+            cout << "Average: " << q << endl;
+        }
+    };
+};
+
+int main() {
+    Student s1;
+    Student::Marks m;
+    s1.accept();
+    m.getmarks(10, 16);
+    s1.display();
+    m.avg();
+    return 0;
+}
