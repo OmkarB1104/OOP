@@ -1,0 +1,31 @@
+#include <iostream>
+using namespace std;
+
+class Book {
+private:
+    char booktitle[20];
+    char authorname[20];
+    int price;
+public:
+    void accept() {
+        cout << "Enter Book name: ";
+        cin >> booktitle;
+        cout << "Enter Author name: ";
+        cin >> authorname;
+        cout << "Enter Book price: ";
+        cin >> price;
+    }
+    void display() {
+        cout << "Book name is: " << booktitle << endl;
+        cout << "Author name is: " << authorname << endl;
+        cout << "Book price is: " << price << endl;
+    }
+};
+
+int main() {
+    Book b1;
+    Book *p = &b1;
+    p->accept();
+    p->display();
+    return 0;
+}
