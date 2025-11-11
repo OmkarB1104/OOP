@@ -1,1 +1,25 @@
+#include <iostream>
+using namespace std;
+
+class Result1 {
+public:
+    float marks;
+    void accept() { cin >> marks; }
+};
+
+class Result2 {
+public:
+    float marks;
+    void accept() { cin >> marks; }
+};
+
+int main() {
+    Result1 r1;
+    Result2 r2;
+    r1.accept();
+    r2.accept();
+    float avg = (r1.marks + r2.marks) / 2.0f;
+    cout << avg << endl;
+    return 0;
+}
 
