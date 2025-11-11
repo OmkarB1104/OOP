@@ -1,0 +1,27 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+class Student {
+public:
+    int roll;
+    string name;
+
+    void input() {
+        cout << "Enter roll: ";
+        cin >> roll;
+        cout << "Enter name: ";
+        getline(cin >> ws, name);
+    }
+
+    void display() const {
+        cout << "Roll: " << roll << "\nName: " << name << '\n';
+    }
+};
+
+int main() {
+    Student s;
+    s.input();
+    s.display();
+    return 0;
+}
