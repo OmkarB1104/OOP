@@ -1,0 +1,26 @@
+#include <iostream>
+using namespace std;
+
+class Student {
+private:
+    int roll;
+    float per;
+public:
+    void accept() {
+        cout << "Enter roll no: ";
+        cin >> roll;
+        cout << "Enter percentage: ";
+        cin >> per;
+    }
+    void display() {
+        cout << "Roll no: " << this->roll << endl;
+        cout << "Percentage: " << this->per << endl;
+    }
+};
+
+int main() {
+    Student s1;
+    s1.accept();
+    s1.display();
+    return 0;
+}
