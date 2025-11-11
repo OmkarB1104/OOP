@@ -1,0 +1,37 @@
+#include <iostream>
+using namespace std;
+
+class Account {
+private:
+    int accountno;
+public:
+    int balance;
+    void accept() {
+        cout << "Enter Account no: ";
+        cin >> accountno;
+        cout << "Enter account balance: ";
+        cin >> balance;
+    }
+    void display() {
+        cout << "Account no: " << accountno << endl;
+        cout << "Balance after 1 year of interest: " << balance << endl;
+    }
+};
+
+int main() {
+    Account a[10];
+    int i;
+    
+    for (i = 0; i < 10; i++)
+        a[i].accept();
+    
+    for (i = 0; i < 10; i++) {
+        if (a[i].balance >= 5000)
+            a[i].balance = a[i].balance + (a[i].balance * 10 / 100);
+    }
+    
+    for (i = 0; i < 10; i++)
+        a[i].display();
+    
+    return 0;
+}
