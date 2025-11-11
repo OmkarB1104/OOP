@@ -1,0 +1,95 @@
+Default Constructor:
+
+#include <iostream>
+#include <string.h>
+using namespace std;
+
+class Student {
+private:
+    char name[20];
+    float percentage;
+public:
+    Student() {
+        strcpy(name, "Omkar");
+        percentage = 90;
+    }
+    void display() {
+        cout << "Name: " << name << endl;
+        cout << "Percentage: " << percentage << endl;
+    }
+    ~Student() {
+        cout << "Destroyed." << endl;
+    }
+};
+
+int main() {
+    Student s1;
+    s1.display();
+    return 0;
+}
+
+Parameterized Constructor:
+
+#include <iostream>
+#include <string.h>
+using namespace std;
+
+class Student {
+private:
+    char name[20];
+    float percentage;
+public:
+    Student(char n[], float per) {
+        strcpy(name, n);
+        percentage = per;
+    }
+    void display() {
+        cout << "Name: " << name << endl;
+        cout << "Percentage: " << percentage << endl;
+    }
+    ~Student() {
+        cout << "Destroyed." << endl;
+    }
+};
+
+int main() {
+    Student s1("Omkar", 90);
+    s1.display();
+    return 0;
+}
+
+Copy Constructor:
+
+#include <iostream>
+#include <string.h>
+using namespace std;
+
+class Student {
+private:
+    char name[20];
+    float percentage;
+public:
+    Student() {
+        strcpy(name, "Omkar");
+        percentage = 90;
+    }
+    Student(Student &s) {
+        strcpy(name, s.name);
+        percentage = s.percentage;
+    }
+    void display() {
+        cout << "Name: " << name << endl;
+        cout << "Percentage: " << percentage << endl;
+    }
+    ~Student() {
+        cout << "Destroyed." << endl;
+    }
+};
+
+int main() {
+    Student s1;
+    Student s2(s1);
+    s1.display();
+    s2.display();
+    return 0;
+}
