@@ -1,1 +1,21 @@
+#include <iostream>
+using namespace std;
+
+class SumSeries {
+    int n;
+    long long sum;
+public:
+    SumSeries(int x) : n(x), sum(0) {
+        for (int i = 1; i <= n; ++i) sum += i;
+    }
+    void display() { cout << sum << endl; }
+};
+
+int main() {
+    int n;
+    cin >> n;
+    SumSeries obj(n);
+    obj.display();
+    return 0;
+}
 
