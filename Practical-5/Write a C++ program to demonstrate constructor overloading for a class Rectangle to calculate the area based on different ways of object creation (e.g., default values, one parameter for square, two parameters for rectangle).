@@ -1,0 +1,36 @@
+#include <iostream>
+using namespace std;
+
+class Rectangle {
+private:
+    int l, w;
+public:
+    Rectangle() {
+        l = 2;
+        w = 3;
+    }
+    Rectangle(int a) {
+        l = a;
+        w = a;
+    }
+    Rectangle(int a, int b) {
+        l = a;
+        w = b;
+    }
+    void display() {
+        cout << "Area: " << l * w << endl;
+    }
+    ~Rectangle() {
+        cout << "Destroyed." << endl;
+    }
+};
+
+int main() {
+    Rectangle r1;
+    Rectangle r2(7);
+    Rectangle r3(4, 5);
+    r1.display();
+    r2.display();
+    r3.display();
+    return 0;
+}
