@@ -1,1 +1,26 @@
+#include <iostream>
+using namespace std;
+
+class Pair {
+    int a, b;
+public:
+    void accept() { cin >> a >> b; }
+    void display() { cout << a << " " << b << "\n"; }
+    friend void swapValues(Pair &p);
+};
+
+void swapValues(Pair &p) {
+    int t = p.a;
+    p.a = p.b;
+    p.b = t;
+}
+
+int main() {
+    Pair p;
+    p.accept();
+    p.display();
+    swapValues(p);
+    p.display();
+    return 0;
+}
 
