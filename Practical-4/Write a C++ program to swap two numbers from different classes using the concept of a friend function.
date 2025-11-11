@@ -1,0 +1,53 @@
+#include <iostream>
+using namespace std;
+
+class B;
+
+class A {
+    int i;
+public:
+    void accept() {
+        cout << "Enter first no: ";
+        cin >> i;
+    }
+    void display() {
+        cout << "First no: " << i << endl;
+    }
+    friend void swap(class A, class B);
+};
+
+class B {
+    int j;
+public:
+    void accept() {
+        cout << "Enter second no: ";
+        cin >> j;
+    }
+    void display() {
+        cout << "Second no: " << j << endl;
+    }
+    friend void swap(class A, class B);
+};
+
+void swap(class A m, class B n) {
+    int p = m.i;
+    m.i = n.j;
+    n.j = p;
+    cout << "Swapping in Function: " << endl;
+    cout << "First no: " << m.i << endl;
+    cout << "Second no: " << n.j << endl;
+}
+
+int main() {
+    class A a1;
+    class B b1;
+    a1.accept();
+    b1.accept();
+    a1.display();
+    b1.display();
+    swap(a1, b1);
+    cout << "After Swapping:" << endl;
+    a1.display();
+    b1.display();
+    return 0;
+}
