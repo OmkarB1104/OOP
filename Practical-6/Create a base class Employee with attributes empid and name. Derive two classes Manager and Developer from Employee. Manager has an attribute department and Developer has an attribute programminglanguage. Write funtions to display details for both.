@@ -1,0 +1,52 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+class Employee {
+protected:
+    int empid;
+    string name;
+public:
+    Employee() {
+        empid = 28;
+        name = "Omkar";
+    }
+    void display() {
+        cout << "Employee ID: " << empid << endl;
+        cout << "Name: " << name << endl;
+    }
+};
+
+class Manager : public Employee {
+private:
+    string dept;
+public:
+    Manager() {
+        dept = "IT";
+    }
+    void displayManager() {
+        display();
+        cout << "Department: " << dept << endl;
+    }
+};
+
+class Developer : public Employee {
+private:
+    string prolang;
+public:
+    Developer() {
+        prolang = "C++";
+    }
+    void displayDeveloper() {
+        display();
+        cout << "Programming Language: " << prolang << endl;
+    }
+};
+
+int main() {
+    Manager m1;
+    m1.displayManager();
+    Developer d1;
+    d1.displayDeveloper();
+    return 0;
+}
