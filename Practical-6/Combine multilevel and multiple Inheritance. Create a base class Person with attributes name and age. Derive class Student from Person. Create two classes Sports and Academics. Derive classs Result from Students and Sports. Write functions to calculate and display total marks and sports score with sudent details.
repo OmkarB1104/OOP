@@ -1,0 +1,51 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+class Person {
+protected:
+    string name;
+    int age;
+public:
+    void acceptPerson() { cin >> name >> age; }
+};
+
+class Student : virtual public Person {
+protected:
+    int rollno;
+public:
+    void acceptStudent() { acceptPerson(); cin >> rollno; }
+};
+
+class Sports {
+protected:
+    int score;
+public:
+    void acceptSports() { cin >> score; }
+};
+
+class Academics {
+protected:
+    int marks1, marks2;
+public:
+    void acceptAcademics() { cin >> marks1 >> marks2; }
+};
+
+class Result : public Student, public Sports, public Academics {
+    int total;
+public:
+    void compute() { total = marks1 + marks2; }
+    void display() {
+        cout << name << " " << age << " " << rollno << " " << total << " " << score << endl;
+    }
+};
+
+int main() {
+    Result r;
+    r.acceptStudent();
+    r.acceptAcademics();
+    r.acceptSports();
+    r.compute();
+    r.display();
+    return 0;
+}
